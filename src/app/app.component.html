@@ -1,0 +1,14 @@
+
+<div style="text-align:center; margin: 40px;">
+  <input [(ngModel)]="query" placeholder="Search for products..." />
+  <button (click)="search()">Search</button>
+</div>
+
+<div *ngIf="products.length">
+  <div *ngFor="let product of products" style="margin: 10px; border: 1px solid #ccc; padding: 10px;">
+    <img [src]="product.imageUrl" alt="{{product.title}}" width="100" />
+    <h3>{{product.title}}</h3>
+    <p>Store: {{product.store}}</p>
+    <p>Price: ₹{{product.price}}</p>
+  </div>
+</div>
